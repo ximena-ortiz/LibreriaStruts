@@ -7,10 +7,17 @@
 
     <package name="default" extends="struts-default">
 
-        <action name="libros" class="com.loscuchurrumines.action.AccionLibro">
-            <result name="success">/WEB-INF/views/libros.jsp</result>
+        <action name="empleado" class="com.loscuchurrumines.action.AccionEmpleado">
+            <result name="success">/WEB-INF/views/empleado/listarEmpleado.jsp</result>
         </action>
-
+        <action name="insertarEmpleado" class="com.loscuchurrumines.action.AccionEmpleado" method="insert">
+            <result name="success" type="redirectAction">empleado</result>
+            <result name="error">/WEB-INF/views/empleado/error.jsp</result>
+        </action>
+        
+        <action name="formularioEmpleado">
+            <result>/WEB-INF/views/empleado/formularioEmpleado.jsp</result>
+        </action>
     </package>
 
 </struts>
