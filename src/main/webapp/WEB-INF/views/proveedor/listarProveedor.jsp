@@ -31,13 +31,14 @@
             %>
             <tr>
                 <td><%= proveedor.getCodigo() %></td>
-                <td><img src = "<%= proveedor.getFotoProveedor() %>" alt="foto proveedor" width="100" height="100"></td>
+                <td><img src = "<%= proveedor.getFoto() %>" alt="foto proveedor" width="100" height="100"></td>
                 <td><%= proveedor.getNombre() %></td>
                 <td><%= proveedor.getTelefono() %></td>
             </tr>
             <% } %>
         </tbody>
     </table>
+    <a href="formularioProveedor.action">Agregar</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

@@ -1,23 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE struts PUBLIC
-"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-"http://struts.apache.org/dtds/struts-2.0.dtd">
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
 
     <package name="default" extends="struts-default">
-
+        <!-- listar-->
         <action name="empleado" class="com.loscuchurrumines.action.AccionEmpleado">
             <result name="success">/WEB-INF/views/empleado/listarEmpleado.jsp</result>
         </action>
-        <action name="insertarEmpleado" class="com.loscuchurrumines.action.AccionEmpleado" method="insert">
+
+        <action name="cliente" class="com.loscuchurrumines.action.AccionCliente">
+            <result name="success">/WEB-INF/views/cliente/listarCliente.jsp</result>
+        </action>
+
+        <action name="producto" class="com.loscuchurrumines.action.AccionProducto">
+            <result name="success">/WEB-INF/views/producto/listarProducto.jsp</result>
+        </action>
+
+        <action name="proveedor" class="com.loscuchurrumines.action.AccionProveedor">
+            <result name="success">/WEB-INF/views/proveedor/listarProveedor.jsp</result>
+        </action>
+
+        <!-- insertar-->
+        <action name="insertarEmpleado" class="com.loscuchurrumines.action.AccionEmpleado"
+            method="insert">
             <result name="success" type="redirectAction">empleado</result>
             <result name="error">/WEB-INF/views/empleado/error.jsp</result>
         </action>
-        
+
         <action name="formularioEmpleado">
             <result>/WEB-INF/views/empleado/formularioEmpleado.jsp</result>
         </action>
+
+
+        <action name="insertarCliente" class="com.loscuchurrumines.action.AccionCliente"
+            method="insert">
+            <result name="success" type="redirectAction">cliente</result>
+            <result name="error">/WEB-INF/views/cliente/error.jsp</result>
+        </action>
+
+        <action name="formularioCliente">
+            <result>/WEB-INF/views/cliente/formularioCliente.jsp</result>
+        </action>
+
+
+        <action name="insertarProducto" class="com.loscuchurrumines.action.AccionProducto"
+            method="insert">
+            <result name="success" type="redirectAction">producto</result>
+            <result name="error">/WEB-INF/views/producto/error.jsp</result>
+        </action>
+
+        <action name="formularioProducto">
+            <result>/WEB-INF/views/producto/formularioProducto.jsp</result>
+        </action>
+
+
+        <action name="insertarProveedor" class="com.loscuchurrumines.action.AccionProveedor"
+            method="insert">
+            <result name="success" type="redirectAction">proveedor</result>
+            <result name="error">/WEB-INF/views/proveedor/error.jsp</result>
+        </action>
+
+        <action name="formularioProveedor">
+            <result>/WEB-INF/views/proveedor/formularioProveedor.jsp</result>
+        </action>
+
+
     </package>
 
 </struts>

@@ -32,14 +32,15 @@
             %>
             <tr>
                 <td><%= producto.getCodigo() %></td>
-                <td><img src = "<%= producto.getFotoProducto() %>" alt="foto producto" width="100" height="100"></td>
+                <td><img src = "<%= producto.getFoto() %>" alt="foto producto" width="100" height="100"></td>
                 <td><%= producto.getNombre() %></td>
                 <td><%= producto.getCantidad() %></td>
-                <td><%= producto.getPrecioUnitario() %></td>
+                <td><%= producto.getPrecio() %></td>
             </tr>
             <% } %>
         </tbody>
     </table>
+    <a href="formularioProducto.action">Agregar</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

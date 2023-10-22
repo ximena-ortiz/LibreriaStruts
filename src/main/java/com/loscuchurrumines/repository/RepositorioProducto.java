@@ -19,10 +19,10 @@ public class RepositorioProducto {
             while(rs.next()){
                 Producto producto = new Producto();
                 producto.setCodigo(rs.getInt("codigo"));
-                producto.setFotoProducto(rs.getString("fotoproducto"));
+                producto.setFoto(rs.getString("fotoproducto"));
                 producto.setNombre(rs.getString("nombre"));
                 producto.setCantidad(rs.getInt("cantidad"));
-                producto.setPrecioUnitario(rs.getDouble("prunitario"));
+                producto.setPrecio(rs.getDouble("prunitario"));
                 productos.add(producto);
             }
 
@@ -31,6 +31,21 @@ public class RepositorioProducto {
             e.printStackTrace();
         }
         return productos;
+    }
+
+    public void insertarProducto(Producto producto){
+        String query = "INSERT INTO tbproducto (codigo, fotoproducto, nombre, cantidad, prunitario) VALUES (?, ?, ?, ?, ?)";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, producto.getCodigo());
+            stmt.setString(2, producto.getFoto());
+            stmt.setString(3, producto.getNombre());
+            stmt.setInt(4, producto.getCantidad());
+            stmt.setDouble(5, producto.getPrecio());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     

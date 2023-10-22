@@ -2,21 +2,21 @@ package com.loscuchurrumines.model;
 
 public class Producto {
     private int codigo;
-    private String fotoProducto;
+    private String foto;
     private String nombre;
     private int cantidad;
-    private double precioUnitario;
+    private double precio;
 
     public Producto(){
 
     }
 
-    public Producto (int codigo, String fotoProducto, String nombre, int cantidad, double precioUnitario){
+    public Producto (int codigo, String foto, String nombre, int cantidad, double precio){
         this.codigo=codigo;
-        this.fotoProducto=fotoProducto;
+        this.foto=foto;
         this.nombre=nombre;
         this.cantidad=cantidad;
-        this.precioUnitario=precioUnitario;
+        this.precio=precio;
     }
 
     public int getCodigo(){
@@ -27,12 +27,12 @@ public class Producto {
         this.codigo=codigo;
     }
 
-    public String getFotoProducto(){
-        return this.fotoProducto;
+    public String getFoto(){
+        return this.foto;
     }
 
-    public void setFotoProducto(String fotoproducto){
-        this.fotoProducto=fotoproducto;
+    public void setFoto(String foto){
+        this.foto=foto;
     }
 
     public String getNombre(){
@@ -51,12 +51,12 @@ public class Producto {
         this.cantidad=cantidad;
     }
 
-    public double getPrecioUnitario(){
-        return this.precioUnitario;
+    public double getPrecio(){
+        return this.precio;
     }
 
-    public void setPrecioUnitario(double precioUnitario){
-        this.precioUnitario=precioUnitario;
+    public void setPrecio(double precio){
+        this.precio=precio;
     }
 
 

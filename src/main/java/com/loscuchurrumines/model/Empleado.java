@@ -27,11 +27,11 @@ public class Empleado {
         this.dni = dni;
     }
 
-    public String getfoto() {
+    public String getFoto() {
         return this.foto;
     }
 
-    public void setfoto(String foto) {
+    public void setFoto(String foto) {
         this.foto = foto;
     }
 

@@ -2,7 +2,7 @@ package com.loscuchurrumines.model;
 
 public class Proveedor {
     private int codigo;
-    private String fotoProveedor;
+    private String foto;
     private String nombre;
     private String telefono;
 
@@ -18,12 +18,12 @@ public class Proveedor {
         this.codigo = codigo;
     }
 
-    public String getFotoProveedor() {
-        return fotoProveedor;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setFotoProveedor(String fotoProveedor) {
-        this.fotoProveedor = fotoProveedor;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public String getNombre() {

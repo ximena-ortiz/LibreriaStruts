@@ -2,7 +2,7 @@ package com.loscuchurrumines.model;
 
 public class Cliente {
     private String dni;
-    private String fotocliente;
+    private String foto;
     private String direccion;
     private String telefono;
     private String email;
@@ -11,9 +11,9 @@ public class Cliente {
 
     }
 
-    public Cliente (String dni, String fotocliente, String direccion, String telefono, String email){
+    public Cliente (String dni, String foto, String direccion, String telefono, String email){
         this.dni=dni;
-        this.fotocliente = fotocliente;
+        this.foto = foto;
         this.direccion=direccion;
         this.telefono=telefono;
         this.email=email;
@@ -27,12 +27,12 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public String getFotoCliente() {
-        return this.fotocliente;
+    public String getFoto() {
+        return this.foto;
     }
 
-    public void setFotoCliente(String fotocliente) {
-        this.fotocliente = fotocliente;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public String getDireccion() {

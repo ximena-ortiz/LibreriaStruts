@@ -21,7 +21,7 @@ public class RepositorioCliente {
             while (rs.next()) {
                 Cliente cliente = new Cliente();
                 cliente.setDni(rs.getString("dni"));
-                cliente.setFotoCliente(rs.getString("fotocliente"));
+                cliente.setFoto(rs.getString("fotocliente"));
                 cliente.setDireccion(rs.getString("direccion"));
                 cliente.setTelefono(rs.getString("telefono"));
                 cliente.setEmail(rs.getString("email"));
@@ -34,6 +34,21 @@ public class RepositorioCliente {
 
         return clientes;
 
+    }
+
+    public void insertarCliente(Cliente cliente){
+        String query = "INSERT INTO tbcliente (dni, fotocliente, direccion, telefono, email) VALUES (?, ?, ?, ?, ?)";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, cliente.getDni());
+            stmt.setString(2, cliente.getFoto());
+            stmt.setString(3, cliente.getDireccion());
+            stmt.setString(4, cliente.getTelefono());
+            stmt.setString(5, cliente.getEmail());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

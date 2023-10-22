@@ -20,7 +20,7 @@ public class RepositorioEmpleado {
             while (rs.next()){
                 Empleado empleado = new Empleado();
                 empleado.setDni(rs.getString("dni"));
-                empleado.setfoto(rs.getString("fotoempleado"));
+                empleado.setFoto(rs.getString("fotoempleado"));
                 empleado.setDireccion(rs.getString("direccion"));
                 empleado.setEmail(rs.getString("email"));
                 empleado.setTelefono(rs.getString("telefono"));
@@ -39,7 +39,7 @@ public class RepositorioEmpleado {
         try (Connection con = ConexionDB.getConnection()) {
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, empleado.getDni());
-            stmt.setString(2, empleado.getfoto());
+            stmt.setString(2, empleado.getFoto());
              //"imprimir fotoempleado";
             stmt.setString(3, empleado.getDireccion());
             stmt.setString(4, empleado.getEmail());

@@ -20,7 +20,7 @@ public class RepositorioProveedor {
             while (rs.next()){
                 Proveedor proveedor = new Proveedor();
                 proveedor.setCodigo(rs.getInt("codigo"));
-                proveedor.setFotoProveedor(rs.getString("fotoproveedor"));
+                proveedor.setFoto(rs.getString("fotoproveedor"));
                 proveedor.setNombre(rs.getString("nombre"));
                 proveedor.setTelefono(rs.getString("telefono"));
                 proveedores.add(proveedor);
@@ -30,5 +30,19 @@ public class RepositorioProveedor {
             e.printStackTrace();
         }
         return proveedores;
+    }
+
+    public void insertarProveedor(Proveedor proveedor){
+        String query = "INSERT INTO tbproveedores (codigo, fotoproveedor, nombre, telefono) VALUES (?, ?, ?, ?)";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, proveedor.getCodigo());
+            stmt.setString(2, proveedor.getFoto());
+            stmt.setString(3, proveedor.getNombre());
+            stmt.setString(4, proveedor.getTelefono());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

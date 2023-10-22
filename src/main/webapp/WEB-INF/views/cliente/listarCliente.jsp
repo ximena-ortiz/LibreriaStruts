@@ -32,7 +32,7 @@
             %>
             <tr>
                 <td><%= cliente.getDni() %></td>
-                <td><%= cliente.getFotoCliente() %></td>
+                <td><img src ="<%= cliente.getFoto() %>" alt="foto cliente" width="100" height="100"></td>
                 <td><%= cliente.getDireccion() %></td>
                 <td><%= cliente.getTelefono() %></td>
                 <td><%= cliente.getEmail() %></td>
@@ -40,6 +40,7 @@
             <% } %>
         </tbody>
     </table>
+    <a href="formularioCliente.action">Agregar</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

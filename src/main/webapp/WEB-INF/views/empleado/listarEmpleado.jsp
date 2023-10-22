@@ -32,7 +32,7 @@
             %>
             <tr>
                 <td><%= empleado.getDni() %></td>
-                <td><img src = "<%= empleado.getfoto() %>" alt="foto empleado" width="100" height="100"></td>
+                <td><img src = "<%= empleado.getFoto() %>" alt="foto empleado" width="100" height="100"></td>
                 <td><%= empleado.getDireccion() %></td>
                 <td><%= empleado.getTelefono() %></td>
                 <td><%= empleado.getEmail() %></td>
@@ -40,6 +40,8 @@
             <% } %>
         </tbody>
     </table>
+    <a href="formularioEmpleado.action">Agregar</a>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
