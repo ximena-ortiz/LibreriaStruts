@@ -22,6 +22,8 @@
                 <th>Nombre</th>
                 <th>Cantidad</th>
                 <th>Precio Unitario</th>
+                <th>Proveedor</th>
+                <th>Operaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -36,11 +38,17 @@
                 <td><%= producto.getNombre() %></td>
                 <td><%= producto.getCantidad() %></td>
                 <td><%= producto.getPrecio() %></td>
+                <td><%= producto.getProveedor()%></td>
+                <td>
+                    <a href="formularioEditarProducto?codigo=<%= producto.getCodigo()%>&foto=<%= producto.getFoto()%>&nombre=<%= producto.getNombre()%>&cantidad=<%= producto.getCantidad()%>&precio=<%= producto.getPrecio()%>&proveedor=<%= producto.getProveedor()%>">Editar</a>
+                    <a href="eliminarProducto?codigo=<%= producto.getCodigo() %>">Eliminar</a>
             </tr>
             <% } %>
         </tbody>
     </table>
     <a href="formularioProducto.action">Agregar</a>
+    <a href="formularioEditarProducto.action">Editar</a>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

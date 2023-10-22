@@ -40,4 +40,19 @@ public class AccionProducto extends ActionSupport implements ModelDriven<Product
         this.producto = producto;
     }
     
+    public String update(){
+        if(producto != null){
+            repoProducto.actualizarProducto(producto);
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
+    public String delete(){
+        if(producto != null){
+            repoProducto.eliminarProducto(producto.getCodigo());
+            return SUCCESS;
+        }
+        return ERROR;
+    }
 }

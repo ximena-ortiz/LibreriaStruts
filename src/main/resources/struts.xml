@@ -65,6 +65,26 @@
             <result>/WEB-INF/views/proveedor/formularioProveedor.jsp</result>
         </action>
 
+        <!-- update / editar-->
+        <action name="editarProducto" class="com.loscuchurrumines.action.AccionProducto"
+            method="update">
+            <result name="success" type="redirectAction">producto</result>
+            <result name="error">/WEB-INF/views/producto/error.jsp</result>
+        </action>
+
+        <action name="formularioEditarProducto">
+            <result>/WEB-INF/views/producto/formularioEditarProducto.jsp</result>
+        </action>
+
+        <!-- eliminar -->
+        <action name="eliminarProducto" class="com.loscuchurrumines.action.AccionProducto" method="update">
+            <result name="success" type="redirectAction">producto</result>
+            <result name="error">/WEB-INF/views/producto/error.jsp</result>
+        </action>
+
+
+
+
 
     </package>
 

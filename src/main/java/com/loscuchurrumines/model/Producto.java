@@ -6,17 +6,37 @@ public class Producto {
     private String nombre;
     private int cantidad;
     private double precio;
+    private int proveedor;
+    private String estado;
 
     public Producto(){
 
     }
 
-    public Producto (int codigo, String foto, String nombre, int cantidad, double precio){
+    public Producto (int codigo, String foto, String nombre, int cantidad, double precio, int proveedor, String estado){
         this.codigo=codigo;
         this.foto=foto;
         this.nombre=nombre;
         this.cantidad=cantidad;
         this.precio=precio;
+        this.proveedor=proveedor;
+        this.estado=estado;
+    }
+
+    public String getEstado(){
+        return this.estado;
+    }
+
+    public void setEstado(String estado){
+        this.estado=estado;
+    }
+
+    public int getProveedor(){
+        return this.proveedor;
+    }
+
+    public void setProveedor(int proveedor){
+        this.proveedor=proveedor;
     }
 
     public int getCodigo(){

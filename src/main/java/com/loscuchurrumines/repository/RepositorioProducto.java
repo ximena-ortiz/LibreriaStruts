@@ -23,6 +23,7 @@ public class RepositorioProducto {
                 producto.setNombre(rs.getString("nombre"));
                 producto.setCantidad(rs.getInt("cantidad"));
                 producto.setPrecio(rs.getDouble("prunitario"));
+                producto.setProveedor(rs.getInt("fkproveedor"));
                 productos.add(producto);
             }
 
@@ -34,19 +35,49 @@ public class RepositorioProducto {
     }
 
     public void insertarProducto(Producto producto){
-        String query = "INSERT INTO tbproducto (codigo, fotoproducto, nombre, cantidad, prunitario) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO tbproducto (fotoproducto, nombre, cantidad, prunitario, estado, fkproveedor) VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection con = ConexionDB.getConnection()) {
             PreparedStatement stmt = con.prepareStatement(query);
-            stmt.setInt(1, producto.getCodigo());
-            stmt.setString(2, producto.getFoto());
-            stmt.setString(3, producto.getNombre());
-            stmt.setInt(4, producto.getCantidad());
-            stmt.setDouble(5, producto.getPrecio());
+            stmt.setString(1, producto.getFoto());
+            stmt.setString(2, producto.getNombre());
+            stmt.setInt(3, producto.getCantidad());
+            stmt.setDouble(4, producto.getPrecio());
+            stmt.setString(5,"A");
+            stmt.setInt(6, producto.getProveedor());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     
-    
+
+    public void actualizarProducto(Producto producto){
+        String query = "UPDATE tbproducto SET fotoproducto = ?, nombre = ?, cantidad = ?, prunitario = ? ,fkproveedor = ?, estado = ? WHERE codigo = ?";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, producto.getFoto());
+            stmt.setString(2, producto.getNombre());
+            stmt.setInt(3, producto.getCantidad());
+            stmt.setDouble(4, producto.getPrecio());
+            stmt.setInt(5, producto.getProveedor());
+            stmt.setString(6, producto.getEstado());
+            stmt.setInt(7, producto.getCodigo());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+        public boolean eliminarProducto(int codigo){
+            String query = "DELETE FROM tbproducto WHERE codigo = ?";
+            try (Connection con = ConexionDB.getConnection()) {
+                PreparedStatement stmt = con.prepareStatement(query);
+                stmt.setInt(1, codigo);
+                stmt.executeUpdate();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
+    }
 }
