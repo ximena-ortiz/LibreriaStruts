@@ -14,6 +14,8 @@
 <div class="container">
     <h2 class="my-4">Lista de Productos</h2>
 
+    <a href="formularioProducto.action">Agregar</a><br><br>
+
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -40,14 +42,15 @@
                 <td><%= producto.getPrecio() %></td>
                 <td><%= producto.getProveedor()%></td>
                 <td>
-                    <a href="formularioEditarProducto?codigo=<%= producto.getCodigo()%>&foto=<%= producto.getFoto()%>&nombre=<%= producto.getNombre()%>&cantidad=<%= producto.getCantidad()%>&precio=<%= producto.getPrecio()%>&proveedor=<%= producto.getProveedor()%>">Editar</a>
-                    <a href="eliminarProducto?codigo=<%= producto.getCodigo() %>">Eliminar</a>
+                    <a href="formularioEditarProducto.action?codigo=<%= producto.getCodigo()%>&foto=<%= producto.getFoto()%>&nombre=<%= producto.getNombre()%>&cantidad=<%= producto.getCantidad()%>&precio=<%= producto.getPrecio()%>&proveedor=<%= producto.getProveedor()%>">Editar</a>
+
+                    <a href="eliminarProducto.action?codigo=<%= producto.getCodigo() %>">Eliminar</a>
             </tr>
             <% } %>
         </tbody>
     </table>
-    <a href="formularioProducto.action">Agregar</a>
-    <a href="formularioEditarProducto.action">Editar</a>
+    <a href="index.jsp">Volver</a>
+
 
 </div>
 

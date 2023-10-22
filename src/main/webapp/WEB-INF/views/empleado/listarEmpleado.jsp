@@ -14,6 +14,9 @@
 <div class="container">
     <h2 class="my-4">Lista de Empleados</h2>
 
+    <a href="formularioEmpleado.action">Agregar</a><br><br>
+
+
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -22,6 +25,9 @@
                 <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Email</th>
+                <th>Clave</th>
+                <th>Estado</th>
+                <th>Operaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -36,11 +42,19 @@
                 <td><%= empleado.getDireccion() %></td>
                 <td><%= empleado.getTelefono() %></td>
                 <td><%= empleado.getEmail() %></td>
+                <td><%= empleado.getClave() %></td>
+                <td><%= empleado.getEstado() %></td>
+                <td>
+                    <a href="formularioEditarEmpleado.action?dni=<%= empleado.getDni()%>&foto=<%= empleado.getFoto()%>&direccion=<%= empleado.getDireccion()%>&email=<%= empleado.getEmail()%>&telefono=<%= empleado.getTelefono()%>&clave=<%= empleado.getClave()%>&estado=<%=empleado.getEstado()%>">Editar</a>
+
+                    <a href="eliminarEmpleado.action?dni=<%= empleado.getDni() %>">Eliminar</a>
+                </td>
             </tr>
             <% } %>
         </tbody>
     </table>
-    <a href="formularioEmpleado.action">Agregar</a>
+    <a href="index.jsp">Volver</a>
+
 
 </div>
 

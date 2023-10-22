@@ -41,5 +41,21 @@ public class AccionCliente extends ActionSupport implements ModelDriven<Cliente>
     public void setCliente(Cliente cliente){
         this.cliente = cliente;
     }
+
+    public String update(){
+        if(cliente != null){
+            repoCliente.actualizarCliente(cliente);
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
+    public String delete(){
+        if(cliente != null){
+            repoCliente.eliminarCliente(cliente.getDni());
+            return SUCCESS;
+        }
+        return ERROR;
+    }
     
 }

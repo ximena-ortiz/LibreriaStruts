@@ -51,4 +51,31 @@ public class RepositorioCliente {
         }
     }
 
+    public void actualizarCliente(Cliente cliente){
+        String query = "UPDATE tbcliente SET fotocliente = ?, direccion = ?, telefono = ?, email = ? WHERE dni = ?";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, cliente.getFoto());
+            stmt.setString(2, cliente.getDireccion());
+            stmt.setString(3, cliente.getTelefono());
+            stmt.setString(4, cliente.getEmail());
+            stmt.setString(5, cliente.getDni());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean eliminarCliente(String dni){
+        String query = "DELETE FROM tbcliente WHERE dni = ?";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, dni);
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

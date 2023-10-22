@@ -30,12 +30,6 @@ public class AccionEmpleado extends ActionSupport implements ModelDriven<Emplead
     public String insert() {
         if (empleado != null) {
             repoEmpleado.insertarEmpleado(empleado);
-            //System.out.println(empleado.getDireccion() );
-            //System.out.println(empleado.getfoto() );
-            //System.out.println(empleado.getTelefono() );
-            // System.out.println(empleado.getEmail() );
-            // System.out.println(empleado.getDni() );
-
             return SUCCESS;
         }
         return ERROR;
@@ -47,5 +41,21 @@ public class AccionEmpleado extends ActionSupport implements ModelDriven<Emplead
 
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
+    }
+
+    public String update() {
+        if (empleado != null) {
+            repoEmpleado.actualizarEmpleado(empleado);
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
+    public String delete() {
+        if (empleado != null) {
+            repoEmpleado.eliminarEmpleado(empleado.getDni());
+            return SUCCESS;
+        }
+        return ERROR;
     }
 }

@@ -76,15 +76,59 @@
             <result>/WEB-INF/views/producto/formularioEditarProducto.jsp</result>
         </action>
 
+        <action name="editarCliente" class="com.loscuchurrumines.action.AccionCliente"
+            method="update">
+            <result name="success" type="redirectAction">cliente</result>
+            <result name="error">/WEB-INF/views/cliente/error.jsp</result>
+        </action>
+
+        <action name="formularioEditarCliente">
+            <result>/WEB-INF/views/cliente/formularioEditarCliente.jsp</result>
+        </action>
+
+
+        <action name="editarEmpleado" class="com.loscuchurrumines.action.AccionEmpleado"
+            method="update">
+            <result name="success" type="redirectAction">empleado</result>
+            <result name="error">/WEB-INF/views/empleado/error.jsp</result>
+        </action>
+
+        <action name="formularioEditarEmpleado">
+            <result>/WEB-INF/views/empleado/formularioEditarEmpleado.jsp</result>
+        </action>
+
+
+        <action name="editarProveedor" class="com.loscuchurrumines.action.AccionProveedor"
+            method="update">
+            <result name="success" type="redirectAction">proveedor</result>
+            <result name="error">/WEB-INF/views/proveedor/error.jsp</result>
+        </action>
+
+        <action name="formularioEditarProveedor">
+            <result>/WEB-INF/views/proveedor/formularioEditarProveedor.jsp</result>
+        </action>
+
+
         <!-- eliminar -->
-        <action name="eliminarProducto" class="com.loscuchurrumines.action.AccionProducto" method="update">
+        <action name="eliminarProducto" class="com.loscuchurrumines.action.AccionProducto" method="delete">
             <result name="success" type="redirectAction">producto</result>
             <result name="error">/WEB-INF/views/producto/error.jsp</result>
         </action>
 
+        <action name="eliminarCliente" class="com.loscuchurrumines.action.AccionCliente" method="delete">
+            <result name="success" type="redirectAction">cliente</result>
+            <result name="error">/WEB-INF/views/cliente/error.jsp</result>
+        </action>
 
+        <action name="eliminarEmpleado" class="com.loscuchurrumines.action.AccionEmpleado" method="delete">
+            <result name="success" type="redirectAction">empleado</result>
+            <result name="error">/WEB-INF/views/empleado/error.jsp</result>
+        </action>
 
-
+        <action name="eliminarProveedor" class="com.loscuchurrumines.action.AccionProveedor" method="delete">
+            <result name="success" type="redirectAction">proveedor</result>
+            <result name="error">/WEB-INF/views/proveedor/error.jsp</result>
+        </action>
 
     </package>
 

@@ -14,6 +14,8 @@
 <div class="container">
     <h2 class="my-4">Lista de Clientes </h2>
 
+    <a href="formularioCliente.action">Agregar</a><br><br>
+
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -22,6 +24,7 @@
                 <th>Direccion</th>
                 <th>Telefono</th>
                 <th>Email</th>
+                <th>Operaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -36,11 +39,18 @@
                 <td><%= cliente.getDireccion() %></td>
                 <td><%= cliente.getTelefono() %></td>
                 <td><%= cliente.getEmail() %></td>
+                <td>
+                <a href="formularioEditarCliente.action?dni=<%= cliente.getDni()%>&foto=<%= cliente.getFoto()%>&direccion=<%= cliente.getDireccion()%>&telefono=<%= cliente.getTelefono()%>&email=<%= cliente.getEmail()%>">Editar</a>
+
+                <a href="eliminarCliente.action?dni=<%= cliente.getDni() %>">Eliminar</a>
+                </td>
+
             </tr>
             <% } %>
         </tbody>
     </table>
-    <a href="formularioCliente.action">Agregar</a>
+    <a href="index.jsp">Volver</a>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

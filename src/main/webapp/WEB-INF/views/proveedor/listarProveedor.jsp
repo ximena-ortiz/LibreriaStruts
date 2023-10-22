@@ -14,6 +14,8 @@
 <div class="container">
     <h2 class="my-4">Lista de Proveedores</h2>
 
+    <a href="formularioProveedor.action">Agregar</a><br><br>
+
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -21,6 +23,7 @@
                 <th>Foto</th>
                 <th>Nombre</th>
                 <th>Telefono</th>
+                <th>Operaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -34,11 +37,16 @@
                 <td><img src = "<%= proveedor.getFoto() %>" alt="foto proveedor" width="100" height="100"></td>
                 <td><%= proveedor.getNombre() %></td>
                 <td><%= proveedor.getTelefono() %></td>
+                <td>
+                    <a href="formularioEditarProveedor.action?codigo=<%= proveedor.getCodigo()%>&foto=<%= proveedor.getFoto()%>&nombre=<%= proveedor.getNombre()%>&telefono=<%= proveedor.getTelefono()%>">Editar</a>
+                    <a href="eliminarProveedor.action?codigo=<%= proveedor.getCodigo() %>">Eliminar</a>
+                </td>
             </tr>
             <% } %>
         </tbody>
     </table>
-    <a href="formularioProveedor.action">Agregar</a>
+    <a href="index.jsp">Volver</a>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

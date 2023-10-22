@@ -10,7 +10,10 @@
             <label for="empleado.dni">DNI:</label>
             <input type="text" id="empleado.dni" name="empleado.dni" />
         </div>
-        
+        <div>
+            <label for="empleado.foto">Foto Empleado:</label>
+            <input type="text" id="empleado.foto" name="empleado.foto" />
+        </div>
         <div>
             <label for="empleado.direccion">Dirección:</label>
             <input type="text" id="empleado.direccion" name="empleado.direccion" />
@@ -24,9 +27,14 @@
             <input type="text" id="empleado.telefono" name="empleado.telefono" />
         </div>
         <div>
-            <label for="empleado.foto">Foto Empleado:</label>
-            <input type="text" id="empleado.foto" name="empleado.foto" />
+            <label for="empleado.clave">Clave:</label>
+            <input type="text" id="empleado.clave" name="empleado.clave" />
         </div>
+        <div>
+            <label for="empleado.estado">Estado:</label>
+            <input type="text" id="empleado.estado" name="empleado.estado" />
+        </div>
+        
         <input type="submit" value="Insertar" />
     </form>
     

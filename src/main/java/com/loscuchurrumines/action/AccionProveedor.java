@@ -40,5 +40,19 @@ public class AccionProveedor extends ActionSupport implements ModelDriven<Provee
         this.proveedor = proveedor;
     }
 
-    
+    public String update(){
+        if(proveedor != null){
+            repoProveedor.actualizarProveedor(proveedor);
+            return SUCCESS;
+        }
+        return ERROR;
+    }
+
+    public String delete(){
+        if(proveedor != null){
+            repoProveedor.eliminarProveedor(proveedor.getCodigo());
+            return SUCCESS;
+        }
+        return ERROR;
+    }
 }

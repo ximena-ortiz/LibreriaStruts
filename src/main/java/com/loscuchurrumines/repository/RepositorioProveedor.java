@@ -45,4 +45,31 @@ public class RepositorioProveedor {
             e.printStackTrace();
         }
     }
+
+    public void actualizarProveedor(Proveedor proveedor){
+        String query = "UPDATE tbproveedores SET fotoproveedor = ?, nombre = ?, telefono = ? WHERE codigo = ?";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, proveedor.getFoto());
+            stmt.setString(2, proveedor.getNombre());
+            stmt.setString(3, proveedor.getTelefono());
+            stmt.setInt(4, proveedor.getCodigo());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean eliminarProveedor(int codigo){
+        String query = "DELETE FROM tbproveedores WHERE codigo = ?";
+        try (Connection con = ConexionDB.getConnection()) {
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setInt(1, codigo);
+            stmt.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

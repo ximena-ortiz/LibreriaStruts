@@ -51,7 +51,7 @@
         </div>
         <div>
             <label for="producto.estado">Estado:</label>
-            <input type="text" id="producto.estado" name="producto.estado"/>
+            <input type="text" id="producto.estado" name="producto.estado" />
         </div>
         <input type="submit" value="Editar" />
 </body>
